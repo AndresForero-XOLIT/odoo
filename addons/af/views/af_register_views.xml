@@ -1,0 +1,18 @@
+<?xml version="1.0"?>
+<odoo>
+
+    <!-- acción de regitrar cliente -->
+    <record id="af_register_registrar_action" model="ir.actions.act_window">
+        <field name="name">Registrar cliente</field>
+        <field name="res_model">af_register</field>
+        <field name="view_mode">tree,form</field>
+    </record>
+
+
+    <menuitem id="af_register_menu_root" name="Cliente">
+        <menuitem id="af_register_1_menu" name="Registrar" action="af_register_registrar_action"> </menuitem>
+        <menuitem id="af_register_2_menu" name="Consultar" > </menuitem>
+        
+    </menuitem>
+
+</odoo>
