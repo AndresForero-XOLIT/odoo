@@ -21,10 +21,20 @@ class Register(models.Model):
 
     # Description
     nombre_cliente = fields.Char(
-        'Nombre cliente'
-        # , index='trigram', required=True,
-        # compute='_compute_name', readonly=False, store=True
+        'Nombre cliente',required=True
         )
+    nit_cliente = fields.Integer("NIT",required=True)
+
+    telefono_cliente = fields.Integer("Teléfono")
+    celular_cliente = fields.Integer("Celular")
+    email_cliente = fields.Char("Email",required=True)
+    
+    ciudad_cliente = fields.Char("Ciudad",default="Bogotá")
+    
+    direccion_cliente = fields.Char("Dirección")
+    
+    num_empleados = fields.Integer("Número de empleados",required=True,default=10)
+    fecha_registro = fields.Date("Fecha de registro",default=fields.Date.today,readonly=True)
     
     # telefono_cliente = fields.Integer (
     #     'Nombre cliente'

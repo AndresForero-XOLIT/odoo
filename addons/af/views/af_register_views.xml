@@ -1,16 +1,58 @@
 <?xml version="1.0"?>
 <odoo>
 
-    <!-- acción de regitrar cliente -->
-    <record id="af_register_registrar_action" model="ir.actions.act_window">
-        <field name="name">Registrar cliente</field>
-        <field name="res_model">af_register</field>
-        <field name="view_mode">tree,form</field>
+    <!-- formulario -->
+    <record id="crear_cliente_form" model="ir.ui.view">
+        <field name="name">af_register_form</field>
+        <field name="model">af_register</field>
+        <field name="arch" type="xml">
+            <form>
+                <sheet>
+                    <group>
+                        <group>
+                            <field name="nombre_cliente" string="Nombre de cliente"/>
+                            <field name="nit_cliente" string="NIT"/>
+                            <field name="num_empleados" string="Número de empleados"/>
+                        </group>    
+                        <group>
+                            <field name="telefono_cliente" string="Teléfono"/>
+                            <field name="celular_cliente" string="Celular"/>
+                            <field name="email_cliente" string="Email"/>
+                        </group>    
+                    
+                        <group>
+                            <field name="ciudad_cliente" string="Ciudad"/>
+                            <field name="direccion_cliente" string="Dirección"/>
+
+                        </group>                     
+                        <field name="fecha_registro" string="Fecha de registro"/>
+                    </group>
+                </sheet>
+            </form>
+        </field>
     </record>
 
 
+    <!-- acción -->
+    <record id = "crear_cliente_action" model="ir.actions.act_window">
+        <field name="name">Nombre cliente</field>
+        <field name="type">ir.actions.act_window</field>
+        <field name="res_model">af_register</field>
+        <field name="view_mode">tree,form</field>
+        <field name="help" type="html">
+            <p class="o_view_nocontent_create">
+                Crear un nuevo registro.
+            </p>
+        </field>
+    </record>
+
+
+
+
+
+
     <menuitem id="af_register_menu_root" name="Cliente">
-        <menuitem id="af_register_1_menu" name="Registrar" action="af_register_registrar_action"> </menuitem>
+        <menuitem id="af_register_1_menu" name="Registrar" action="crear_cliente_action"> </menuitem>
         <menuitem id="af_register_2_menu" name="Consultar" > </menuitem>
         
     </menuitem>
